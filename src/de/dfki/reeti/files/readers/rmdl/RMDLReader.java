@@ -3,8 +3,8 @@ package de.dfki.reeti.files.readers.rmdl;
 import de.dfki.reeti.builders.PoseHandler;
 import de.dfki.reeti.builders.PropertyHandler;
 import de.dfki.reeti.builders.RettiBuilderHandler;
-import de.dfki.reeti.files.readers.FileReader;
 import de.dfki.reeti.files.filestystem.FileSystemAble;
+import de.dfki.reeti.files.readers.FileReader;
 
 import java.util.HashMap;
 

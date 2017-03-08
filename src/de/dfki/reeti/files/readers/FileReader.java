@@ -1,12 +1,11 @@
 package de.dfki.reeti.files.readers;
 
-import de.dfki.reeti.files.filestystem.FileSystemAble;
 import de.dfki.reeti.files.exceptions.IncorrectFileExtension;
+import de.dfki.reeti.files.filestystem.FileSystemAble;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.*;
 
 /**
  * Created by alvaro on 3/6/17.

@@ -27,6 +27,20 @@ public class PoseParserTest {
     }
 
     @Test
+    public void test_parse_EmptyLine_False() {
+        makeParser();
+        boolean res  = parser.parse("");
+        assertFalse(res);
+    }
+
+    @Test
+    public void test_parse_StartingXMLTagNotEndingXMLTag_false() {
+        makeParser();
+        boolean res = parser.parse("<description");
+        assertFalse(res);
+    }
+
+    @Test
     public void test_parse_SmallXML_MapWithKeys() {
         makeParser();
         parser.parse("<description>");

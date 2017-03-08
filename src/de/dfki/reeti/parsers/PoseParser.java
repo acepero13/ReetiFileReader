@@ -15,26 +15,27 @@ import java.util.List;
  * Created by alvaro on 3/7/17.
  * Parses this:
  * <description>
-     <Pose>
-     <name>Conversation/eyesLeft</name>
-     <startTime>0</startTime>
-     <duration>0.5;0;1</duration>
-     <backToNeutral>0</backToNeutral>
-     <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;42.5;42.5;91;76.5;-1;-1;-1</values>
-     <transition>smooth</transition>
-     </Pose>
-
- </description>
+ * <Pose>
+ * <name>Conversation/eyesLeft</name>
+ * <startTime>0</startTime>
+ * <duration>0.5;0;1</duration>
+ * <backToNeutral>0</backToNeutral>
+ * <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;42.5;42.5;91;76.5;-1;-1;-1</values>
+ * <transition>smooth</transition>
+ * </Pose>
+ * <p>
+ * </description>
  */
 public class PoseParser implements RMDLParser {
-    private StringBuilder xml = new StringBuilder();
     HashMap<String, String> values = new HashMap<>();
+    private StringBuilder xml = new StringBuilder();
+
     @Override
     public boolean parse(String line) {
-        if(!isXMLTag(line)){
-            return  false;
+        if (!isXMLTag(line)) {
+            return false;
         }
-        if(isUrbiTag(line)){
+        if (isUrbiTag(line)) {
             return false;
         }
         parseXMLEnty(line);
@@ -78,7 +79,7 @@ public class PoseParser implements RMDLParser {
         return (line.startsWith("<") && line.endsWith(">"));
     }
 
-    public HashMap<String,String> getValues() {
+    public HashMap<String, String> getValues() {
         return values;
     }
 }

@@ -22,10 +22,7 @@ public class RMDLFileSystem implements FileSystemAble {
     @Override
     public boolean fileExists() {
         file = new File(this.filename);
-        if(file.exists() && !file.isDirectory()) {
-            return true;
-        }
-        return false;
+        return file.exists() && !file.isDirectory();
     }
 
     @Override
