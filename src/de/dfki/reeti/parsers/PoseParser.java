@@ -47,10 +47,8 @@ public class PoseParser implements RMDLParser {
         xml.append(line);
         try {
             tryToParseXML();
-        } catch (JDOMException e) {
+        } catch (JDOMException | IOException e) {
             // handle JDOMException
-        } catch (IOException e) {
-            // handle IOException
         }
     }
 
@@ -63,8 +61,8 @@ public class PoseParser implements RMDLParser {
     }
 
     private void setKeyValue(List list) {
-        for (int i = 0; i < list.size(); i++) {
-            Element node = (Element) list.get(i);
+        for (Object aList : list) {
+            Element node = (Element) aList;
             String key = node.getName();
             String value = node.getValue();
             values.put(key, value);

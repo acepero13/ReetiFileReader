@@ -12,9 +12,9 @@ import java.io.*;
 public class RMDLFileSystem implements FileSystemAble {
     private static final String RMDL_EXTENSION = "rmdl";
     private final String filename;
-    private File file;
-    private FileReader fileReader;
-    private BufferedReader bufferedReader;
+    private File file = null;
+    private FileReader fileReader = null;
+    private BufferedReader bufferedReader = null;
 
     public RMDLFileSystem(String filename){
         this.filename = filename;

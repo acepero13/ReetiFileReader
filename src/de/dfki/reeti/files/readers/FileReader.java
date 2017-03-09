@@ -9,14 +9,15 @@ import java.io.IOException;
 
 /**
  * Created by alvaro on 3/6/17.
+ * Read files rmld
  */
 public abstract class FileReader implements Readable {
-    protected String filename;
-    protected FileSystemAble fileSystem;
-    private BufferedReader bufferedReader;
+    protected String filename = null;
+    protected FileSystemAble fileSystem = null;
+    private BufferedReader bufferedReader = null;
 
     @Override
-    public boolean open(String filname) throws IncorrectFileExtension, FileNotFoundException {
+    public boolean open(String filname) {
         this.filename = filname;
         return open();
     }
