@@ -20,7 +20,7 @@ public class RMDLReader extends FileReader {
         initHandlers();
     }
 
-    protected void initHandlers() {
+    private void initHandlers() {
         firstHandlerPropertyHandler = new PropertyHandler();
         poseHandler = new PoseHandler();
         firstHandlerPropertyHandler.setNextHandler(poseHandler);

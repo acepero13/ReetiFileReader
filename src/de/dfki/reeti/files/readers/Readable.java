@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 /**
  * Created by alvaro on 3/6/17.
  */
-public interface Readable {
+interface Readable {
     boolean open(String filname) throws IncorrectFileExtension, FileNotFoundException;
     boolean open();
     void read();

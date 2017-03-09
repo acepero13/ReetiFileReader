@@ -8,9 +8,9 @@ import java.util.HashMap;
  * Created by alvaro on 3/7/17.
  */
 public abstract class RettiBuilderHandler {
-    protected RettiBuilderHandler nextHandler;
-    protected RMDLParser parser;
-    protected HashMap<String, String> values ;
+    private RettiBuilderHandler nextHandler;
+    RMDLParser parser;
+    HashMap<String, String> values ;
 
     RettiBuilderHandler() {
         values = new HashMap<>();

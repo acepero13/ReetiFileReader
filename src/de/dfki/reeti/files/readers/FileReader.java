@@ -13,7 +13,7 @@ import java.io.IOException;
 public abstract class FileReader implements Readable {
     protected String filename;
     protected FileSystemAble fileSystem;
-    protected BufferedReader bufferedReader;
+    private BufferedReader bufferedReader;
 
     @Override
     public boolean open(String filname) throws IncorrectFileExtension, FileNotFoundException {
@@ -42,7 +42,7 @@ public abstract class FileReader implements Readable {
 
     }
 
-    protected void readLineByLine() throws IOException {
+    private void readLineByLine() throws IOException {
         String line;
         while ((line = bufferedReader.readLine()) != null) {
             parse(line);

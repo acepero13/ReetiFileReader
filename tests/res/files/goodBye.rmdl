@@ -1,0 +1,249 @@
+name=goodBye;
+duration=3.42;
+soundUsed=1;
+imageUsed=0;
+functionUsed=0;
+earsUsed=1;
+eyesUsed=1;
+mouthUsed=1;
+neckUsed=1;
+colorUsed=1;
+<description>
+<TTS>
+<name>Merci de votre écoute, à bientôt sur Reeti point F R</name>
+<startTime>0</startTime>
+<duration>3.12</duration>
+<synchro>1</synchro>
+<language>0</language>
+</TTS>
+<Pose>
+<name>OreillesB</name>
+<startTime>0.081883996</startTime>
+<duration>1;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;0;0;-1;-1;-1;-1;-1;-1;-1</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>ledOff</name>
+<startTime>0.096811</startTime>
+<duration>0.1;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;stop</values>
+<transition>smooth</transition>
+</Pose>
+<Moves>
+<name>moveEyes</name>
+<startTime>0.20686483199999997</startTime>
+<duration>2</duration>
+<usedTL>0;0;0;0;1;0;0;0</usedTL>
+<urbiscript>
+
+
+
+
+
+{
+Global.servo.leftEyePan=50;
+Global.servo.leftEyePan=70 smooth:0.5s;
+Global.servo.leftEyePan=30 smooth:1s;
+Global.servo.leftEyePan=50 smooth:0.5s;
+},
+{
+Global.servo.leftEyeTilt=40;
+Global.servo.leftEyeTilt=100 smooth:1s;
+Global.servo.leftEyeTilt=40 smooth:1s;
+},
+
+{
+Global.servo.rightEyePan=50;
+Global.servo.rightEyePan=30 smooth:0.5s;
+Global.servo.rightEyePan=70 smooth:1s;
+Global.servo.rightEyePan=50 smooth:0.5s;
+},
+{
+Global.servo.rightEyeTilt=40;
+Global.servo.rightEyeTilt=100 smooth:1s;
+Global.servo.rightEyeTilt=40 smooth:1s;
+},
+
+
+
+
+
+</urbiscript>
+</Moves>
+<Pose>
+<name>couB</name>
+<startTime>0.4934160000000001</startTime>
+<duration>0.1;0.1;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;0;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>couC</name>
+<startTime>0.693416</startTime>
+<duration>0.1;0.1;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>50;47.5;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>OreillesH</name>
+<startTime>1.081883996</startTime>
+<duration>2;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;100;100;-1;-1;-1;-1;-1;-1;-1</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>yeuxGFerme</name>
+<startTime>2.848701124</startTime>
+<duration>0.3;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;-1;-1;65;47.5;49;62;84;0;-1</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>ledTurquoise</name>
+<startTime>2.858520000000001</startTime>
+<duration>0.05;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;turquoise</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>ledOff</name>
+<startTime>3.011240000000001</startTime>
+<duration>0.05;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;stop</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>sourire3</name>
+<startTime>3.12</startTime>
+<duration>0.1;0.1;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;100;100;62;53;-1;-1;-1;-1;-1;-1;-1;-1;-1</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>ledTurquoise</name>
+<startTime>3.1762371079999996</startTime>
+<duration>0.05;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;turquoise</values>
+<transition>smooth</transition>
+</Pose>
+<Pose>
+<name>yeuxCentre</name>
+<startTime>3.1891661599999996</startTime>
+<duration>0.1;0;1</duration>
+<backToNeutral>0</backToNeutral>
+<values>-1;-1;-1;-1;-1;-1;-1;-1;-1;65;47.5;49;62;91.5;95.5;-1</values>
+<transition>smooth</transition>
+</Pose>
+
+</description>
+<urbi>
+{sleep(0s);
+{Global.tts.sayWithSynchro("Merci de votre écoute, à bientôt sur Reeti point F R"),
+},},
+{sleep(0.081883996s);
+{Global.servo.leftEar=0 smooth:1s,
+Global.servo.rightEar=0 smooth:1s,
+},
+},
+{sleep(0.096811s);
+{Global.servo.changeColor(0,"stop",1),
+},
+},
+{sleep(0.20686483199999997s);
+{
+
+
+
+
+{
+Global.servo.leftEyePan=50;
+Global.servo.leftEyePan=70 smooth:0.5s;
+Global.servo.leftEyePan=30 smooth:1s;
+Global.servo.leftEyePan=50 smooth:0.5s;
+},
+{
+Global.servo.leftEyeTilt=40;
+Global.servo.leftEyeTilt=100 smooth:1s;
+Global.servo.leftEyeTilt=40 smooth:1s;
+},
+
+{
+Global.servo.rightEyePan=50;
+Global.servo.rightEyePan=30 smooth:0.5s;
+Global.servo.rightEyePan=70 smooth:1s;
+Global.servo.rightEyePan=50 smooth:0.5s;
+},
+{
+Global.servo.rightEyeTilt=40;
+Global.servo.rightEyeTilt=100 smooth:1s;
+Global.servo.rightEyeTilt=40 smooth:1s;
+},
+
+
+
+
+
+},},
+{sleep(0.4934160000000001s);
+{Global.servo.neckTilt=0 smooth:0.1s,
+},
+},
+{sleep(0.693416s);
+{Global.servo.neckRotat=50 smooth:0.1s,
+Global.servo.neckTilt=47.5 smooth:0.1s,
+},
+},
+{sleep(1.081883996s);
+{Global.servo.leftEar=100 smooth:2s,
+Global.servo.rightEar=100 smooth:2s,
+},
+},
+{sleep(2.848701124s);
+{Global.servo.leftEyeTilt=47.5 smooth:0.3s,
+Global.servo.rightEyeTilt=65 smooth:0.3s,
+Global.servo.leftEyePan=62 smooth:0.3s,
+Global.servo.rightEyePan=49 smooth:0.3s,
+Global.servo.leftEyeLid=0 smooth:0.3s,
+Global.servo.rightEyeLid=84 smooth:0.3s,
+},
+},
+{sleep(2.858520000000001s);
+{Global.servo.changeColor(0,"turquoise",1),
+},
+},
+{sleep(3.011240000000001s);
+{Global.servo.changeColor(0,"stop",1),
+},
+},
+{sleep(3.12s);
+{Global.servo.leftLC=100 smooth:0.1s,
+Global.servo.rightLC=100 smooth:0.1s,
+Global.servo.topLip=62 smooth:0.1s,
+Global.servo.bottomLip=53 smooth:0.1s,
+},
+},
+{sleep(3.1762371079999996s);
+{Global.servo.changeColor(0,"turquoise",1),
+},
+},
+{sleep(3.1891661599999996s);
+{Global.servo.leftEyeTilt=47.5 smooth:0.1s,
+Global.servo.rightEyeTilt=65 smooth:0.1s,
+Global.servo.leftEyePan=62 smooth:0.1s,
+Global.servo.rightEyePan=49 smooth:0.1s,
+Global.servo.leftEyeLid=95.5 smooth:0.1s,
+Global.servo.rightEyeLid=91.5 smooth:0.1s,
+},
+},
+</urbi>

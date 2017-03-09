@@ -27,8 +27,8 @@ import java.util.List;
  * </description>
  */
 public class PoseParser implements RMDLParser {
-    HashMap<String, String> values = new HashMap<>();
-    private StringBuilder xml = new StringBuilder();
+    private final HashMap<String, String> values = new HashMap<>();
+    private final StringBuilder xml = new StringBuilder();
 
     @Override
     public boolean parse(String line) {
