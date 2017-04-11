@@ -3,11 +3,12 @@ package de.dfki.reeti.models;
 /**
  * Created by alvaro on 4/10/17.
  */
-public class Pose implements Movement{
+public class Pose {
     private String name;
     private Double startTime;
     private Duration duration;
     private boolean backToNeutral;
+    private Movement motorsMovement;
 
     public String getName() {
         return name;
@@ -43,5 +44,13 @@ public class Pose implements Movement{
 
     public void deactivateBackToNeutral() {
         backToNeutral = false;
+    }
+
+    public Movement getMotorsMovement() {
+        return motorsMovement;
+    }
+
+    public void setMotorMovement(Movement motorMovement) {
+        this.motorsMovement = motorMovement;
     }
 }
