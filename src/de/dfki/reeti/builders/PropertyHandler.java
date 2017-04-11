@@ -10,6 +10,8 @@ import de.dfki.reeti.parsers.PropertyParser;
  */
 public class PropertyHandler extends RettiBuilderHandler{
 
+    //LinkedList <Property> properties = new LinkedList<>();
+
     public PropertyHandler(){
         super();
         parser = new PropertyParser();

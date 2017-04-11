@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
 public class PoseHandlerTest {
     private RettiBuilderHandler poseHandler;
 
+
     @Test
     public void test_appendLine_GoodNameLine_NameLineAdded() {
         makePoseHandler();

@@ -1,6 +1,7 @@
 package de.dfki.reeti.parsers;
 
 
+import de.dfki.reeti.models.builders.PoseBuilder;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -29,7 +30,7 @@ import java.util.List;
 public class PoseParser implements RMDLParser {
     private final HashMap<String, String> values = new HashMap<>();
     private final StringBuilder xml = new StringBuilder();
-
+    private final PoseBuilder poseBuilder = new PoseBuilder(new HashMap<>());
     @Override
     public boolean parse(String line) {
         if (!isXMLTag(line)) {
