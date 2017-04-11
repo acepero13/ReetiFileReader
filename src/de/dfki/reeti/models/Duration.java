@@ -4,27 +4,31 @@ package de.dfki.reeti.models;
  * Created by alvaro on 4/11/17.
  */
 public class Duration {
-    private double startTime;
-    private double endTime;
-    private Double step;
+    private double timeToReachPose;
+    private double timeToMaintainPose;
+    private Double timeToNeutralPose;
 
-    public double getStartTime() {
-        return startTime;
+    public double getTimeToReachPose() {
+        return timeToReachPose;
     }
 
-    public double getEndTime() {
-        return endTime;
+    public double getTimeToMaintainPose() {
+        return timeToMaintainPose;
     }
 
-    public void setStartTime(Double startTime) {
-        this.startTime = startTime;
+    public void setTimeToReachPose(Double timeToReachPose) {
+        this.timeToReachPose = timeToReachPose;
     }
 
-    public void setEndTime(Double endTime) {
-        this.endTime = endTime;
+    public void setTimeToMaintainPose(Double timeToMaintainPose) {
+        this.timeToMaintainPose = timeToMaintainPose;
     }
 
-    public void setStep(Double step) {
-        this.step = step;
+    public void setTimeToNeutralPose(Double timeToNeutralPose) {
+        this.timeToNeutralPose = timeToNeutralPose;
+    }
+
+    public Double getTimeToNeutralPose() {
+        return timeToNeutralPose;
     }
 }

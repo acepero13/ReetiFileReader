@@ -20,8 +20,9 @@ public class DurationFormatterTest {
         makePose();
         durationFormatter.build("0.3;0.5;1", pose);
         Duration duration = pose.getDuration();
-        assertEquals(0.3, duration.getStartTime(), DELTA);
-        assertEquals(0.5, duration.getEndTime(), DELTA);
+        assertEquals(0.3, duration.getTimeToReachPose(), DELTA);
+        assertEquals(0.5, duration.getTimeToMaintainPose(), DELTA);
+        assertEquals(1.0, duration.getTimeToNeutralPose(), DELTA);
     }
 
     @Test(expected = InvalidValue.class)
@@ -33,7 +34,7 @@ public class DurationFormatterTest {
     }
 
     @Test(expected = InvalidValue.class)
-    public void test_build_MoreValuesThanExpected_Exception() throws InvalidValue {
+    public void test_build_MoreValuesThanExpected_InvalidValueException() throws InvalidValue {
         makeDuration();
         makePose();
         durationFormatter.build("0.3;0.5;1;1", pose);
@@ -41,7 +42,7 @@ public class DurationFormatterTest {
     }
 
     @Test(expected = InvalidValue.class)
-    public void test_build_BadDurationValue_Exception() throws InvalidValue {
+    public void test_build_BadDurationValue_InvalidValueException() throws InvalidValue {
         makeDuration();
         makePose();
         durationFormatter.build("0.3;HOLAMUNDO;1uenas", pose);

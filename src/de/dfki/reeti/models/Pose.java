@@ -7,6 +7,7 @@ public class Pose implements Movement{
     private String name;
     private Double startTime;
     private Duration duration;
+    private boolean backToNeutral;
 
     public String getName() {
         return name;
@@ -30,5 +31,17 @@ public class Pose implements Movement{
 
     public void setDuration(Duration duration) {
         this.duration = duration;
+    }
+
+    public boolean isBackToNeutralOn() {
+        return backToNeutral;
+    }
+
+    public void activateBackToNeutral() {
+        backToNeutral = true;
+    }
+
+    public void deactivateBackToNeutral() {
+        backToNeutral = false;
     }
 }

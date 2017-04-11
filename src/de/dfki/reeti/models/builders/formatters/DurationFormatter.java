@@ -32,9 +32,9 @@ public class DurationFormatter extends ArrayFormatter {
 
     private Duration getDuration() throws InvalidValue {
         Duration duration = new Duration();
-        duration.setStartTime(getParsedValue(START_TIME_INDEX));
-        duration.setEndTime(getParsedValue(END_TIME_INDEX));
-        duration.setStep(getParsedValue(STEP_INDEX));
+        duration.setTimeToReachPose(getParsedValue(START_TIME_INDEX));
+        duration.setTimeToMaintainPose(getParsedValue(END_TIME_INDEX));
+        duration.setTimeToNeutralPose(getParsedValue(STEP_INDEX));
         return duration;
     }
 

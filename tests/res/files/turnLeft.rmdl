@@ -11,7 +11,7 @@ colorUsed=0;
 <description>
 <Pose>
 <name>Conversation/eyesLeft</name>
-<startTime>0</startTime>
+<timeToReachPose>0</timeToReachPose>
 <duration>0.5;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;42.5;42.5;91;76.5;-1;-1;-1</values>

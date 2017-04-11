@@ -18,7 +18,7 @@ public class IntFormatterTest {
         Pose pose = new Pose();
         formatter.build("", pose);
 
-       // assertEquals(0, pose.getStartTime());
+       // assertEquals(0, pose.getTimeToReachPose());
     }
 
     @NotNull
@@ -35,7 +35,7 @@ public class IntFormatterTest {
         Formatter formatter =  makeFormatter();
         Pose pose = new Pose();
         formatter.build("13", pose);
-       // assertEquals(13, pose.getStartTime());
+       // assertEquals(13, pose.getTimeToReachPose());
     }
 
     @Test(expected = InvalidValue.class)

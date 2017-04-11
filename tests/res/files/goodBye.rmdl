@@ -11,14 +11,14 @@ colorUsed=1;
 <description>
 <TTS>
 <name>Merci de votre écoute, à bientôt sur Reeti point F R</name>
-<startTime>0</startTime>
+<timeToReachPose>0</timeToReachPose>
 <duration>3.12</duration>
 <synchro>1</synchro>
 <language>0</language>
 </TTS>
 <Pose>
 <name>OreillesB</name>
-<startTime>0.081883996</startTime>
+<timeToReachPose>0.081883996</timeToReachPose>
 <duration>1;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;0;0;-1;-1;-1;-1;-1;-1;-1</values>
@@ -26,7 +26,7 @@ colorUsed=1;
 </Pose>
 <Pose>
 <name>ledOff</name>
-<startTime>0.096811</startTime>
+<timeToReachPose>0.096811</timeToReachPose>
 <duration>0.1;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;stop</values>
@@ -34,7 +34,7 @@ colorUsed=1;
 </Pose>
 <Moves>
 <name>moveEyes</name>
-<startTime>0.20686483199999997</startTime>
+<timeToReachPose>0.20686483199999997</timeToReachPose>
 <duration>2</duration>
 <usedTL>0;0;0;0;1;0;0;0</usedTL>
 <urbiscript>
@@ -75,7 +75,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Moves>
 <Pose>
 <name>couB</name>
-<startTime>0.4934160000000001</startTime>
+<timeToReachPose>0.4934160000000001</timeToReachPose>
 <duration>0.1;0.1;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;0;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1</values>
@@ -83,7 +83,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>couC</name>
-<startTime>0.693416</startTime>
+<timeToReachPose>0.693416</timeToReachPose>
 <duration>0.1;0.1;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>50;47.5;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1</values>
@@ -91,7 +91,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>OreillesH</name>
-<startTime>1.081883996</startTime>
+<timeToReachPose>1.081883996</timeToReachPose>
 <duration>2;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;100;100;-1;-1;-1;-1;-1;-1;-1</values>
@@ -99,7 +99,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>yeuxGFerme</name>
-<startTime>2.848701124</startTime>
+<timeToReachPose>2.848701124</timeToReachPose>
 <duration>0.3;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;65;47.5;49;62;84;0;-1</values>
@@ -107,7 +107,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>ledTurquoise</name>
-<startTime>2.858520000000001</startTime>
+<timeToReachPose>2.858520000000001</timeToReachPose>
 <duration>0.05;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;turquoise</values>
@@ -115,7 +115,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>ledOff</name>
-<startTime>3.011240000000001</startTime>
+<timeToReachPose>3.011240000000001</timeToReachPose>
 <duration>0.05;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;stop</values>
@@ -123,7 +123,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>sourire3</name>
-<startTime>3.12</startTime>
+<timeToReachPose>3.12</timeToReachPose>
 <duration>0.1;0.1;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;100;100;62;53;-1;-1;-1;-1;-1;-1;-1;-1;-1</values>
@@ -131,7 +131,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>ledTurquoise</name>
-<startTime>3.1762371079999996</startTime>
+<timeToReachPose>3.1762371079999996</timeToReachPose>
 <duration>0.05;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;-1;turquoise</values>
@@ -139,7 +139,7 @@ Global.servo.rightEyeTilt=40 smooth:1s;
 </Pose>
 <Pose>
 <name>yeuxCentre</name>
-<startTime>3.1891661599999996</startTime>
+<timeToReachPose>3.1891661599999996</timeToReachPose>
 <duration>0.1;0;1</duration>
 <backToNeutral>0</backToNeutral>
 <values>-1;-1;-1;-1;-1;-1;-1;-1;-1;65;47.5;49;62;91.5;95.5;-1</values>
