@@ -40,6 +40,13 @@ public class MotorFormatterTest {
         assertEquals("light green", movement.getColor());
     }
 
+    @Test(expected = InvalidValue.class)
+    public void test_build_LessMottorsSpecified_InvalidValueException() throws InvalidValue {
+        makeFormatter();
+        pose = makePose();
+        motorFormatter.build("28.5;85;72.5;76;82.5;80.5;68;17.5;66.5;light green", pose);
+    }
+
     @NotNull
     protected Pose makePose() {
         return new Pose();

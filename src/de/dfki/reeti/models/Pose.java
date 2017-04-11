@@ -9,6 +9,7 @@ public class Pose {
     private Duration duration;
     private boolean backToNeutral;
     private Movement motorsMovement;
+    private String transiton;
 
     public String getName() {
         return name;
@@ -52,5 +53,13 @@ public class Pose {
 
     public void setMotorMovement(Movement motorMovement) {
         this.motorsMovement = motorMovement;
+    }
+
+    public void setTransiton(String transiton) {
+        this.transiton = transiton;
+    }
+
+    public String getTransiton() {
+        return transiton;
     }
 }

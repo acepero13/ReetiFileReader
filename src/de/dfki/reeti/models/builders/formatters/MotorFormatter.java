@@ -32,9 +32,16 @@ public class MotorFormatter extends ArrayFormatter {
     @Override
     public void buildObject() throws InvalidValue {
         values = getValue();
+        shouldParseMotorMovement();
         Movement movement = buildMovement();
         pose.setMotorMovement(movement);
 
+    }
+
+    protected void shouldParseMotorMovement() throws InvalidValue {
+        if(values.length > 16 || values.length < 14){
+            throw new InvalidValue();
+        }
     }
 
     @NotNull
