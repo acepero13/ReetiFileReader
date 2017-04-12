@@ -1,9 +1,11 @@
 package de.dfki.reeti.models;
 
+import de.dfki.reeti.models.base.SequencePart;
+
 /**
  * Created by alvaro on 4/10/17.
  */
-public class Pose {
+public class Pose  {
     private String name;
     private Double startTime;
     private Duration duration;

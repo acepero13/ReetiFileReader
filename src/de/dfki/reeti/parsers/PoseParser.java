@@ -29,18 +29,26 @@ import java.util.List;
  */
 public class PoseParser implements RMDLParser {
     private final HashMap<String, String> values = new HashMap<>();
-    private final StringBuilder xml = new StringBuilder();
-    private final PoseBuilder poseBuilder = new PoseBuilder(new HashMap<>());
+    private StringBuilder xml = new StringBuilder();
+    private boolean isFinishedParsing = false;
+
     @Override
     public boolean parse(String line) {
         if (!isXMLTag(line)) {
+            isFinishedParsing = false;
             return false;
         }
         if (isUrbiTag(line)) {
+            isFinishedParsing = false;
             return false;
         }
         parseXMLEnty(line);
         return true;
+    }
+
+    @Override
+    public boolean isFinishedParsingObject() {
+        return isFinishedParsing;
     }
 
 
@@ -48,9 +56,15 @@ public class PoseParser implements RMDLParser {
         xml.append(line);
         try {
             tryToParseXML();
-        } catch (JDOMException | IOException e) {
-            // handle JDOMException
+            clearData();
+        } catch (JDOMException | IOException ignored) {
+            isFinishedParsing = false;
         }
+    }
+
+    private void clearData() {
+        isFinishedParsing = true;
+        xml = new StringBuilder();
     }
 
     private void tryToParseXML() throws JDOMException, IOException {

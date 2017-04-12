@@ -17,9 +17,12 @@ public abstract class BooleanFormatter implements Formatter{
     }
 
     protected void parseValue(String valueString) {
-        int parseInt = Integer.parseInt(valueString);
-        value  = parseInt == 1;
+        value = parseBoolean(valueString);
+    }
 
+    public static boolean parseBoolean(String valueString) {
+        int parseInt = Integer.parseInt(valueString);
+        return parseInt == 1;
     }
 
     @Override

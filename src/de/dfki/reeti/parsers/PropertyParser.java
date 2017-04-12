@@ -4,17 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by alvaro on 3/7/17.
- * Parses this:
- * name=eyesLeftCenter;
- duration=0.6;
- soundUsed=0;
- imageUsed=0;
- functionUsed=0;
- earsUsed=0;
- eyesUsed=1;
- mouthUsed=0;
- neckUsed=0;
- colorUsed=0;
+ * Parses property part:
+
  */
 public class PropertyParser implements RMDLParser, LineParser{
 
@@ -35,6 +26,11 @@ public class PropertyParser implements RMDLParser, LineParser{
         }
         parseKeyValue(line);
         return true;
+    }
+
+    @Override
+    public boolean isFinishedParsingObject() {
+        return false;
     }
 
     private void parseKeyValue(String line) {

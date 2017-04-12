@@ -3,6 +3,7 @@ package de.dfki.reeti.builders;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 import static org.junit.Assert.*;
 
@@ -26,7 +27,14 @@ public class PoseHandlerTest {
         assertEquals(2, parsed.size());
     }
 
+    @Test
+    public void test_appendLine_GoodNameLine_PropertyObject() {
+        makePoseHandler();
+
+
+    }
+
     private void makePoseHandler() {
-        poseHandler = new PoseHandler();
+        poseHandler = new PoseHandler(new LinkedList<>());
     }
 }
