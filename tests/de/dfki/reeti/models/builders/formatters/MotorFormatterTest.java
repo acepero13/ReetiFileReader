@@ -44,7 +44,16 @@ public class MotorFormatterTest {
     public void test_build_LessMottorsSpecified_InvalidValueException() throws InvalidValue {
         makeFormatter();
         pose = makePose();
-        motorFormatter.build("28.5;85;72.5;76;82.5;80.5;68;17.5;66.5;light green", pose);
+        motorFormatter.build("28.5;85;72.5;76;82.5;80.5;23;61;59;67;73.5;85;68;17.5", pose);
+    }
+
+    @Test
+    public void test_build_NoColorSpecified_MovementObject() throws InvalidValue {
+        makeFormatter();
+        pose = makePose();
+        motorFormatter.build("28.5;85;72.5;76;82.5;80.5;23;61;59;67;73.5;85;68;17.5;-1", pose);
+        Movement movement = pose.getMotorsMovement();
+        assertNotNull(movement);
     }
 
     @NotNull

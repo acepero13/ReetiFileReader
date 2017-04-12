@@ -1,6 +1,7 @@
 package de.dfki.reeti.models.builders;
 
 import de.dfki.reeti.models.Pose;
+import de.dfki.reeti.models.exceptions.InvalidValue;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -12,8 +13,9 @@ import static org.junit.Assert.*;
  */
 public class PoseBuilderTest {
     private PoseBuilder builder;
+    private static final double DELTA = 1e-15;
     @Test
-    public void test_build_PoseXML_PoseObject() {
+    public void test_build_PoseXML_PoseObject() throws InvalidValue {
         HashMap<String, String> values = new HashMap<>();
         values.put("name", "EarsDown");
         values.put("startTime", "0");
@@ -25,6 +27,7 @@ public class PoseBuilderTest {
         makeBuilder(values);
         Pose pose = builder.build();
         assertEquals("EarsDown", pose.getName());
+        assertEquals(0.0, pose.getStartTime(), DELTA);
 
 
     }

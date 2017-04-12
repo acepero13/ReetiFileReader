@@ -4,7 +4,6 @@ import de.dfki.reeti.models.Movement;
 import de.dfki.reeti.models.builders.formatters.base.ArrayFormatter;
 import de.dfki.reeti.models.builders.formatters.base.DoubleFormatter;
 import de.dfki.reeti.models.exceptions.InvalidValue;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by alvaro on 4/11/17.
@@ -33,19 +32,26 @@ public class MotorFormatter extends ArrayFormatter {
     public void buildObject() throws InvalidValue {
         values = getValue();
         shouldParseMotorMovement();
-        Movement movement = buildMovement();
+        Movement movement = shouldBuildMovement();
         pose.setMotorMovement(movement);
 
     }
 
     protected void shouldParseMotorMovement() throws InvalidValue {
-        if(values.length > 16 || values.length < 14){
+        if(values.length > 16 || values.length <= 14){
             throw new InvalidValue();
         }
     }
 
-    @NotNull
-    protected Movement buildMovement() throws InvalidValue {
+    private Movement shouldBuildMovement() throws InvalidValue {
+        try {
+            return buildMovement();
+        }catch (ArrayIndexOutOfBoundsException exception){
+            throw new InvalidValue();
+        }
+    }
+
+    private Movement buildMovement() throws InvalidValue {
         Movement movement = new Movement();
         movement.setNeckRotat(DoubleFormatter.parseDouble(values[NECK_ROT_MOTOR]));
         movement.setNeckTilt(DoubleFormatter.parseDouble(values[NECK_TILT_MOTOR]));
@@ -62,7 +68,8 @@ public class MotorFormatter extends ArrayFormatter {
         movement.setRightEyePan(DoubleFormatter.parseDouble(values[RIGHT_EYE_PAN_MOTOR]));
         movement.setLeftEyeLid(DoubleFormatter.parseDouble(values[LEFT_EYE_LID_MOTOR]));
         movement.setRightEyeLid(DoubleFormatter.parseDouble(values[RIGHT_EYE_LID_MOTOR]));
-        movement.setColor(values[COLOR_SPEC]);
+        if (values.length == 16)
+            movement.setColor(values[COLOR_SPEC]);
         return movement;
     }
 }
