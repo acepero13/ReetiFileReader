@@ -1,5 +1,6 @@
 package de.dfki.reeti.parsers;
 
+import de.dfki.reeti.models.Sequence;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -11,9 +12,11 @@ import static org.junit.Assert.*;
  */
 public class PoseParserTest {
     private PoseParser parser;
+    private Sequence sequence;
 
     @Test
     public void test_parse_PropertyLine_False() {
+
         makeParser();
         boolean res = parser.parse("name=eyesLeftCenter;");
         assertFalse(res);
@@ -21,6 +24,7 @@ public class PoseParserTest {
 
     @Test
     public void test_parse_DescriptionLine_True() {
+
         makeParser();
         boolean res = parser.parse("<description>");
         assertTrue(res);
@@ -28,6 +32,7 @@ public class PoseParserTest {
 
     @Test
     public void test_parse_EmptyLine_False() {
+
         makeParser();
         boolean res  = parser.parse("");
         assertFalse(res);
@@ -35,6 +40,7 @@ public class PoseParserTest {
 
     @Test
     public void test_parse_StartingXMLTagNotEndingXMLTag_false() {
+
         makeParser();
         boolean res = parser.parse("<description");
         assertFalse(res);
@@ -42,6 +48,7 @@ public class PoseParserTest {
 
     @Test
     public void test_parse_SmallXML_MapWithKeys() {
+
         makeParser();
         parser.parse("<description>");
         parser.parse("<Pose>");
@@ -55,12 +62,14 @@ public class PoseParserTest {
 
     @Test
     public void test_parse_UrbiLine_False() {
+
         makeParser();
         boolean res = parser.parse("<urbi>");
         assertFalse(res);
     }
 
     protected void makeParser() {
-        parser = new PoseParser();
+        sequence = new Sequence();
+        parser = new PoseParser(sequence);
     }
 }

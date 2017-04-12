@@ -35,7 +35,8 @@ public class PoseBuilder {
         for (String  key: parsedValues.keySet() ) {
             Formatter formatter = formatters.get(key);
             String value = parsedValues.get(key);
-            formatter.build(value, pose);
+            if(formatter!=null)
+                formatter.build(value, pose);
         }
     }
 }

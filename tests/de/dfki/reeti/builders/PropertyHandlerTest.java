@@ -1,7 +1,7 @@
 package de.dfki.reeti.builders;
 
 import de.dfki.reeti.models.Property;
-import de.dfki.reeti.models.base.SequencePart;
+import de.dfki.reeti.models.Sequence;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -42,7 +42,7 @@ public class PropertyHandlerTest {
 
     private class FakePorpertyHandler extends PropertyHandler{
         public FakePorpertyHandler(){
-            super(new LinkedList<>());
+            super(new Sequence());
         }
 
         public Property getProperty(){

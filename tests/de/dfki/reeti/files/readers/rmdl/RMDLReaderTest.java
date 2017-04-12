@@ -4,7 +4,7 @@ import de.dfki.reeti.files.exceptions.IncorrectFileExtension;
 import de.dfki.reeti.files.readers.FileReader;
 import de.dfki.reeti.files.filestystem.FileSystemAble;
 import de.dfki.reeti.files.filestystem.rmdl.RMDLFileSystem;
-import de.dfki.reeti.models.base.SequencePart;
+import de.dfki.reeti.models.Sequence;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -88,8 +88,8 @@ public class RMDLReaderTest {
         bf.lines.add("");
         reader.open();
         reader.read();
-        LinkedList<SequencePart> sequenceParts = ((RMDLReader)reader).getSequence();
-        assertEquals(2, sequenceParts.size());
+        Sequence sequenceParts = ((RMDLReader)reader).getSequence();
+        assertEquals(2, sequenceParts.getPoses().size());
 
 
     }

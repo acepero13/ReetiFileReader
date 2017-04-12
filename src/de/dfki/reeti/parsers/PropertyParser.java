@@ -1,5 +1,6 @@
 package de.dfki.reeti.parsers;
 
+import de.dfki.reeti.models.Sequence;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -10,8 +11,13 @@ import org.apache.commons.lang3.StringUtils;
 public class PropertyParser implements RMDLParser, LineParser{
 
     private static final int EQUAL_SIGNS_ALLOWED = 1;
+    private final Sequence sequence;
     private String key = null;
     private String value = null;
+
+    public PropertyParser(Sequence sequence){
+        this.sequence = sequence;
+    }
 
     @Override
     public boolean parse(String line) {
@@ -25,13 +31,10 @@ public class PropertyParser implements RMDLParser, LineParser{
             return false;
         }
         parseKeyValue(line);
+        sequence.addProperty(key, value);
         return true;
     }
 
-    @Override
-    public boolean isFinishedParsingObject() {
-        return false;
-    }
 
     private void parseKeyValue(String line) {
         String trimmedLine = line.trim();

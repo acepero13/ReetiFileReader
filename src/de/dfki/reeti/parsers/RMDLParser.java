@@ -5,5 +5,4 @@ package de.dfki.reeti.parsers;
  */
 public interface RMDLParser {
     boolean parse(String line);
-    boolean isFinishedParsingObject();
 }

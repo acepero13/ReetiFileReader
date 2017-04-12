@@ -1,5 +1,6 @@
 package de.dfki.reeti.parsers;
 
+import de.dfki.reeti.models.Sequence;
 import org.junit.Test;
 import static org.junit.Assert.*;
 /**
@@ -7,8 +8,11 @@ import static org.junit.Assert.*;
  */
 public class PropertyParserTest {
     PropertyParser parser;
+    private Sequence sequence;
+
     @Test
     public void test_parse_WithoutSemicolon_False() {
+
         makePropertyParser();
         boolean result = parser.parse("name=eyesLeftCenter");
         assertFalse(result);
@@ -46,7 +50,8 @@ public class PropertyParserTest {
     }
 
     protected void makePropertyParser() {
-        parser = new PropertyParser();
+        sequence = new Sequence();
+        parser = new PropertyParser(sequence);
     }
 
 }

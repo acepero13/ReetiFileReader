@@ -5,10 +5,9 @@ import de.dfki.reeti.builders.PropertyHandler;
 import de.dfki.reeti.builders.RettiBuilderHandler;
 import de.dfki.reeti.files.filestystem.FileSystemAble;
 import de.dfki.reeti.files.readers.FileReader;
-import de.dfki.reeti.models.base.SequencePart;
+import de.dfki.reeti.models.Sequence;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 /**
  * Created by alvaro on 3/6/17.
@@ -17,13 +16,14 @@ public class RMDLReader extends FileReader {
 
     private RettiBuilderHandler firstHandlerPropertyHandler;
     private RettiBuilderHandler poseHandler;
-    private LinkedList<SequencePart> sequence = new LinkedList();
+    private Sequence sequence;
 
     public RMDLReader(){
         initHandlers();
     }
 
     private void initHandlers() {
+        sequence = new Sequence();
         firstHandlerPropertyHandler = new PropertyHandler(sequence);
         poseHandler = new PoseHandler(sequence);
         firstHandlerPropertyHandler.setNextHandler(poseHandler);
@@ -60,7 +60,7 @@ public class RMDLReader extends FileReader {
         return poseHandler.getValues();
     }
 
-    public LinkedList<SequencePart> getSequence(){
-        return firstHandlerPropertyHandler.getSequence();
+    public Sequence getSequence(){
+        return sequence;
     }
 }

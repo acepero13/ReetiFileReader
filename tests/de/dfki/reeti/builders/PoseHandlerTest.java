@@ -1,5 +1,6 @@
 package de.dfki.reeti.builders;
 
+import de.dfki.reeti.models.Sequence;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -30,11 +31,9 @@ public class PoseHandlerTest {
     @Test
     public void test_appendLine_GoodNameLine_PropertyObject() {
         makePoseHandler();
-
-
     }
 
     private void makePoseHandler() {
-        poseHandler = new PoseHandler(new LinkedList<>());
+        poseHandler = new PoseHandler(new Sequence());
     }
 }

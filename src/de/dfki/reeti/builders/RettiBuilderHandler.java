@@ -1,6 +1,6 @@
 package de.dfki.reeti.builders;
 
-import de.dfki.reeti.models.base.SequencePart;
+import de.dfki.reeti.models.Sequence;
 import de.dfki.reeti.parsers.RMDLParser;
 
 import java.util.HashMap;
@@ -14,11 +14,11 @@ public abstract class RettiBuilderHandler {
 
     private RettiBuilderHandler nextHandler = null;
     RMDLParser parser = null;
-    private LinkedList<SequencePart> sequence ;
+    protected Sequence sequence ;
     HashMap<String, String> values = new HashMap<>();
 
-    public RettiBuilderHandler(LinkedList<SequencePart> sequences){
-        this.sequence = sequences;
+    public RettiBuilderHandler(Sequence sequence){
+        this.sequence = sequence;
         values = new HashMap<>();
     }
 
@@ -35,14 +35,6 @@ public abstract class RettiBuilderHandler {
     }
 
     protected abstract void parse();
-
-    public void add(SequencePart sequencePart){
-        sequence.add(sequencePart);
-    }
-
-    public LinkedList<SequencePart> getSequence(){
-        return sequence;
-    }
 
     public HashMap<String, String> getValues() {
         return values;

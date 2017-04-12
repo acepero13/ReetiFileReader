@@ -1,7 +1,10 @@
 package de.dfki.reeti.parsers;
 
 
+import de.dfki.reeti.models.Pose;
+import de.dfki.reeti.models.Sequence;
 import de.dfki.reeti.models.builders.PoseBuilder;
+import de.dfki.reeti.models.exceptions.InvalidValue;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -29,59 +32,76 @@ import java.util.List;
  */
 public class PoseParser implements RMDLParser {
     private final HashMap<String, String> values = new HashMap<>();
+    private final Sequence sequence;
     private StringBuilder xml = new StringBuilder();
-    private boolean isFinishedParsing = false;
+
+    public PoseParser(Sequence sequence){
+        this.sequence = sequence;
+    }
 
     @Override
     public boolean parse(String line) {
         if (!isXMLTag(line)) {
-            isFinishedParsing = false;
             return false;
         }
         if (isUrbiTag(line)) {
-            isFinishedParsing = false;
             return false;
         }
         parseXMLEnty(line);
         return true;
     }
 
-    @Override
-    public boolean isFinishedParsingObject() {
-        return isFinishedParsing;
-    }
 
 
     private void parseXMLEnty(String line) {
         xml.append(line);
         try {
-            tryToParseXML();
-            clearData();
-        } catch (JDOMException | IOException ignored) {
-            isFinishedParsing = false;
-        }
+            processXML();
+        } catch (JDOMException | IOException | InvalidValue ignored) {}
+    }
+
+    private void processXML() throws JDOMException, IOException, InvalidValue {
+        tryToParseXML();
+        clearData();
+    }
+
+    private void addPose(HashMap<String, String> poseValues) throws InvalidValue {
+        PoseBuilder poseBuilder = new PoseBuilder(poseValues);
+        Pose pose = poseBuilder.build();
+        sequence.addPose(pose);
     }
 
     private void clearData() {
-        isFinishedParsing = true;
         xml = new StringBuilder();
     }
 
-    private void tryToParseXML() throws JDOMException, IOException {
+    private void tryToParseXML() throws JDOMException, IOException, InvalidValue {
         SAXBuilder saxBuilder = new SAXBuilder();
         Document doc = saxBuilder.build(new StringReader(xml.toString()));
         Element rootNode = doc.getRootElement();
-        List list = rootNode.getChild("Pose").getChildren();
+        List list = rootNode.getChildren("Pose");
         setKeyValue(list);
     }
 
-    private void setKeyValue(List list) {
+    private void setKeyValue(List list) throws InvalidValue {
         for (Object aList : list) {
             Element node = (Element) aList;
-            String key = node.getName();
-            String value = node.getValue();
-            values.put(key, value);
+            List children = node.getChildren();
+            HashMap<String, String> poseValues = getNodeValues(children);
+            addPose(poseValues);
         }
+    }
+
+    private HashMap<String, String> getNodeValues(List children) {
+        HashMap<String, String> poseValues = new HashMap<>();
+        for(Object child: children){
+            Element childNode = (Element) child;
+            String key = childNode.getName();
+            String value = childNode.getValue();
+            values.put(key, value);
+            poseValues.put(key, value);
+        }
+        return poseValues;
     }
 
     private boolean isUrbiTag(String line) {

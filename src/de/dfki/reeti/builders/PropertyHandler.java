@@ -1,11 +1,10 @@
 package de.dfki.reeti.builders;
 
 import de.dfki.reeti.models.Property;
-import de.dfki.reeti.models.base.SequencePart;
+import de.dfki.reeti.models.Sequence;
 import de.dfki.reeti.parsers.LineParser;
 import de.dfki.reeti.parsers.PropertyParser;
 
-import java.util.LinkedList;
 
 
 /**
@@ -14,9 +13,9 @@ import java.util.LinkedList;
  */
 public class PropertyHandler extends RettiBuilderHandler{
     Property property;
-    public PropertyHandler(LinkedList<SequencePart> sequence){
+    public PropertyHandler(Sequence sequence){
         super(sequence);
-        parser = new PropertyParser();
+        parser = new PropertyParser(sequence);
     }
 
     @Override
@@ -24,7 +23,7 @@ public class PropertyHandler extends RettiBuilderHandler{
         String key = ((LineParser)parser).getKey();
         String value = (String) ((LineParser) parser).getValue();
         getValues().put(key, value);
-        property = Property.getInstance();
+        property = sequence.getProperty();
         property.add(key, value);
     }
 

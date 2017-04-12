@@ -1,6 +1,5 @@
 package de.dfki.reeti.models;
 
-import de.dfki.reeti.models.base.SequencePart;
 import de.dfki.reeti.models.builders.formatters.base.BooleanFormatter;
 import de.dfki.reeti.models.builders.formatters.base.DoubleFormatter;
 import de.dfki.reeti.models.exceptions.InvalidValue;
@@ -20,9 +19,6 @@ public class Property  {
     private boolean neckUsed = false;
     private boolean colorUsed = false;
 
-    private Property(){
-
-    }
 
     public boolean isEyesUsed() {
         return eyesUsed;
@@ -30,19 +26,6 @@ public class Property  {
 
     public void setEyesUsed(boolean eyesUsed) {
         this.eyesUsed = eyesUsed;
-    }
-
-    private static class InstanceHolder {
-        private static Property instance = new Property();
-    }
-
-    public static Property getInstance(){
-        return InstanceHolder.instance;
-    }
-
-    public static Property createProperty(){
-        InstanceHolder.instance = new Property();
-        return InstanceHolder.instance;
     }
 
 
