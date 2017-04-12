@@ -8,6 +8,8 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
  */
 public interface Formatter {
     void build(String value, Pose pose) throws InvalidValue;
+
     void buildObject() throws InvalidValue;
+
     Object getValue();
 }

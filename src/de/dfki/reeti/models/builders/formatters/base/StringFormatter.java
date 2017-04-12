@@ -9,6 +9,7 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
 public abstract class StringFormatter implements Formatter {
     protected String stringValue;
     protected Pose pose;
+
     @Override
     public void build(String value, Pose pose) throws InvalidValue {
         stringValue = value;
@@ -19,7 +20,7 @@ public abstract class StringFormatter implements Formatter {
     public abstract void buildObject();
 
     @Override
-    public String getValue(){
+    public String getValue() {
         return stringValue;
     }
 

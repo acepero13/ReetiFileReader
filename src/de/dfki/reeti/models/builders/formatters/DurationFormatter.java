@@ -10,10 +10,10 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
  */
 public class DurationFormatter extends ArrayFormatter {
 
+    public static final int TOTAL_INDEX = 3;
     private static final int START_TIME_INDEX = 0;
     private static final int END_TIME_INDEX = 1;
     private static final int STEP_INDEX = 2;
-    public static final int TOTAL_INDEX = 3;
     private String[] durationValues;
 
     @Override
@@ -25,7 +25,7 @@ public class DurationFormatter extends ArrayFormatter {
     }
 
     private void shouldBeValidDuration() throws InvalidValue {
-        if(durationValues.length != TOTAL_INDEX){
+        if (durationValues.length != TOTAL_INDEX) {
             throw new InvalidValue();
         }
     }
@@ -39,6 +39,6 @@ public class DurationFormatter extends ArrayFormatter {
     }
 
     private Double getParsedValue(int pos) throws InvalidValue {
-       return DoubleFormatter.parseDouble(durationValues[pos]);
+        return DoubleFormatter.parseDouble(durationValues[pos]);
     }
 }

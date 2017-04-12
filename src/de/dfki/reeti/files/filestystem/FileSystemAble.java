@@ -11,10 +11,15 @@ import java.io.FileNotFoundException;
  */
 public interface FileSystemAble {
     boolean fileExists();
+
     String getFileExtension();
+
     BufferedReader openFile() throws IncorrectFileExtension, FileNotFoundException;
+
     boolean checkFileExistance() throws FileNotFoundException;
-    boolean  checkFileExtension() throws IncorrectFileExtension;
+
+    boolean checkFileExtension() throws IncorrectFileExtension;
+
     void close();
 
 

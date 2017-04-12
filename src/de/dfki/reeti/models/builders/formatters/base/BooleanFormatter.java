@@ -6,9 +6,15 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
 /**
  * Created by alvaro on 4/11/17.
  */
-public abstract class BooleanFormatter implements Formatter{
-    private boolean value;
+public abstract class BooleanFormatter implements Formatter {
     protected Pose pose;
+    private boolean value;
+
+    public static boolean parseBoolean(String valueString) {
+        int parseInt = Integer.parseInt(valueString);
+        return parseInt == 1;
+    }
+
     @Override
     public void build(String valueString, Pose pose) throws InvalidValue {
         this.pose = pose;
@@ -20,13 +26,8 @@ public abstract class BooleanFormatter implements Formatter{
         value = parseBoolean(valueString);
     }
 
-    public static boolean parseBoolean(String valueString) {
-        int parseInt = Integer.parseInt(valueString);
-        return parseInt == 1;
-    }
-
     @Override
-    public abstract void buildObject() throws InvalidValue ;
+    public abstract void buildObject() throws InvalidValue;
 
     @Override
     public Boolean getValue() {

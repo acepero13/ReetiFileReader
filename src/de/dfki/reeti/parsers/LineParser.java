@@ -6,5 +6,6 @@ package de.dfki.reeti.parsers;
  */
 public interface LineParser {
     String getKey();
+
     Object getValue();
 }

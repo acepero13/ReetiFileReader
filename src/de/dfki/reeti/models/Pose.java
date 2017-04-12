@@ -1,11 +1,9 @@
 package de.dfki.reeti.models;
 
-import de.dfki.reeti.models.base.SequencePart;
-
 /**
  * Created by alvaro on 4/10/17.
  */
-public class Pose  {
+public class Pose {
     private String name;
     private Double startTime;
     private Duration duration;
@@ -17,12 +15,12 @@ public class Pose  {
         return name;
     }
 
-    public Double getStartTime() {
-        return startTime;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Double getStartTime() {
+        return startTime;
     }
 
     public void setStartTime(Double startTime) {
@@ -57,11 +55,11 @@ public class Pose  {
         this.motorsMovement = motorMovement;
     }
 
-    public void setTransiton(String transiton) {
-        this.transiton = transiton;
-    }
-
     public String getTransiton() {
         return transiton;
+    }
+
+    public void setTransiton(String transiton) {
+        this.transiton = transiton;
     }
 }

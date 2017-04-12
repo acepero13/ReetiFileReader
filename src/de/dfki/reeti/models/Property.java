@@ -7,7 +7,7 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
 /**
  * Created by alvaro on 3/9/17.
  */
-public class Property  {
+public class Property {
     private String name = "";
     private double duration;
     private boolean soundUsed = false;
@@ -101,8 +101,8 @@ public class Property  {
         this.colorUsed = colorUsed;
     }
 
-    public void add(String key, String value){
-        switch (key){
+    public void add(String key, String value) {
+        switch (key) {
             case "name":
                 this.setName(value);
                 break;

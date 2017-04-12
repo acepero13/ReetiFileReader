@@ -18,15 +18,8 @@ public class RMDLReader extends FileReader {
     private RettiBuilderHandler poseHandler;
     private Sequence sequence;
 
-    public RMDLReader(){
+    public RMDLReader() {
         initHandlers();
-    }
-
-    private void initHandlers() {
-        sequence = new Sequence();
-        firstHandlerPropertyHandler = new PropertyHandler(sequence);
-        poseHandler = new PoseHandler(sequence);
-        firstHandlerPropertyHandler.setNextHandler(poseHandler);
     }
 
     public RMDLReader(String fileName) {
@@ -46,21 +39,27 @@ public class RMDLReader extends FileReader {
         initHandlers();
     }
 
+    private void initHandlers() {
+        sequence = new Sequence();
+        firstHandlerPropertyHandler = new PropertyHandler(sequence);
+        poseHandler = new PoseHandler(sequence);
+        firstHandlerPropertyHandler.setNextHandler(poseHandler);
+    }
 
     @Override
     public void parse(String line) {
         firstHandlerPropertyHandler.append(line);
     }
 
-    public HashMap<String, String> getPropertyValues(){
+    public HashMap<String, String> getPropertyValues() {
         return firstHandlerPropertyHandler.getValues();
     }
 
-    public HashMap<String, String> getPoseValues(){
+    public HashMap<String, String> getPoseValues() {
         return poseHandler.getValues();
     }
 
-    public Sequence getSequence(){
+    public Sequence getSequence() {
         return sequence;
     }
 }

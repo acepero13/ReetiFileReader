@@ -9,7 +9,7 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
 public class BackToNeutralFormatter extends BooleanFormatter {
     @Override
     public void buildObject() throws InvalidValue {
-        if(getValue())
+        if (getValue())
             pose.activateBackToNeutral();
         else
             pose.deactivateBackToNeutral();

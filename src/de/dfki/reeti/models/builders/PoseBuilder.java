@@ -13,6 +13,7 @@ import java.util.HashMap;
 public class PoseBuilder {
     private final HashMap<String, String> parsedValues;
     HashMap<String, Formatter> formatters = new HashMap<>();
+
     public PoseBuilder(HashMap<String, String> values) {
         formatters.put("name", new NameFormatter());
         formatters.put("startTime", new StartTimeFormatter());
@@ -32,10 +33,10 @@ public class PoseBuilder {
     }
 
     private void formatValues(Pose pose) throws InvalidValue {
-        for (String  key: parsedValues.keySet() ) {
+        for (String key : parsedValues.keySet()) {
             Formatter formatter = formatters.get(key);
             String value = parsedValues.get(key);
-            if(formatter!=null)
+            if (formatter != null)
                 formatter.build(value, pose);
         }
     }

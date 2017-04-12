@@ -12,23 +12,23 @@ public class Duration {
         return timeToReachPose;
     }
 
-    public double getTimeToMaintainPose() {
-        return timeToMaintainPose;
-    }
-
     public void setTimeToReachPose(Double timeToReachPose) {
         this.timeToReachPose = timeToReachPose;
+    }
+
+    public double getTimeToMaintainPose() {
+        return timeToMaintainPose;
     }
 
     public void setTimeToMaintainPose(Double timeToMaintainPose) {
         this.timeToMaintainPose = timeToMaintainPose;
     }
 
-    public void setTimeToNeutralPose(Double timeToNeutralPose) {
-        this.timeToNeutralPose = timeToNeutralPose;
-    }
-
     public Double getTimeToNeutralPose() {
         return timeToNeutralPose;
+    }
+
+    public void setTimeToNeutralPose(Double timeToNeutralPose) {
+        this.timeToNeutralPose = timeToNeutralPose;
     }
 }

@@ -6,28 +6,27 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Created by alvaro on 3/7/17.
  * Parses property part:
-
  */
-public class PropertyParser implements RMDLParser, LineParser{
+public class PropertyParser implements RMDLParser, LineParser {
 
     private static final int EQUAL_SIGNS_ALLOWED = 1;
     private final Sequence sequence;
     private String key = null;
     private String value = null;
 
-    public PropertyParser(Sequence sequence){
+    public PropertyParser(Sequence sequence) {
         this.sequence = sequence;
     }
 
     @Override
     public boolean parse(String line) {
-        if(line.equals("")){
+        if (line.equals("")) {
             return false;
         }
-        if(!lastCharacterString(line).equals(";")){
+        if (!lastCharacterString(line).equals(";")) {
             return false;
         }
-        if(!hasEqual(line)){
+        if (!hasEqual(line)) {
             return false;
         }
         parseKeyValue(line);
@@ -43,7 +42,7 @@ public class PropertyParser implements RMDLParser, LineParser{
     }
 
     private void setParsedValue(String trimmedLine, int equalPosition) {
-        value = trimmedLine.substring(equalPosition+1, trimmedLine.length() -1);
+        value = trimmedLine.substring(equalPosition + 1, trimmedLine.length() - 1);
     }
 
     private int setParsedKey(String trimmedLine) {

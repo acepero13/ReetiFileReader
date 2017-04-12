@@ -15,7 +15,7 @@ public abstract class IntFormatter implements Formatter {
     }
 
     public IntFormatter() {
-        defaultValue  = null;
+        defaultValue = null;
     }
 
     @Override
@@ -23,13 +23,13 @@ public abstract class IntFormatter implements Formatter {
         intValue = null;
         try {
             intValue = Integer.parseInt(value);
-        }catch (NumberFormatException numberExc){
+        } catch (NumberFormatException numberExc) {
             intValue = getDefaultValue();
         }
     }
 
     private Integer getDefaultValue() throws InvalidValue {
-        if(defaultValue != null){
+        if (defaultValue != null) {
             intValue = defaultValue;
             return intValue;
         }

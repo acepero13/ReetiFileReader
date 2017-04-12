@@ -4,7 +4,6 @@ import de.dfki.reeti.models.Sequence;
 import de.dfki.reeti.parsers.RMDLParser;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 /**
  * Created by alvaro on 3/7/17.
@@ -12,24 +11,24 @@ import java.util.LinkedList;
 public abstract class RettiBuilderHandler {
 
 
-    private RettiBuilderHandler nextHandler = null;
+    protected Sequence sequence;
     RMDLParser parser = null;
-    protected Sequence sequence ;
     HashMap<String, String> values = new HashMap<>();
+    private RettiBuilderHandler nextHandler = null;
 
-    public RettiBuilderHandler(Sequence sequence){
+    public RettiBuilderHandler(Sequence sequence) {
         this.sequence = sequence;
         values = new HashMap<>();
     }
 
-    public void setNextHandler(RettiBuilderHandler handler){
+    public void setNextHandler(RettiBuilderHandler handler) {
         nextHandler = handler;
     }
 
-    public void append(String line){
-        if(parser.parse(line)){
+    public void append(String line) {
+        if (parser.parse(line)) {
             parse();
-        }else if (nextHandler != null){
+        } else if (nextHandler != null) {
             nextHandler.append(line);
         }
     }

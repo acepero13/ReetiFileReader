@@ -9,8 +9,9 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
  */
 public abstract class ArrayFormatter implements Formatter {
     public static final String SEPARATOR = ";";
-    private String[] values;
     protected Pose pose;
+    private String[] values;
+
     @Override
     public void build(String value, Pose pose) throws InvalidValue {
         this.pose = pose;

@@ -16,9 +16,10 @@ public class RMDLFileSystem implements FileSystemAble {
     private FileReader fileReader = null;
     private BufferedReader bufferedReader = null;
 
-    public RMDLFileSystem(String filename){
+    public RMDLFileSystem(String filename) {
         this.filename = filename;
     }
+
     @Override
     public boolean fileExists() {
         file = new File(this.filename);
@@ -45,15 +46,15 @@ public class RMDLFileSystem implements FileSystemAble {
 
     @Override
     public boolean checkFileExistance() throws FileNotFoundException {
-        if(!fileExists()){
+        if (!fileExists()) {
             throw new FileNotFoundException();
         }
-        return  true;
+        return true;
     }
 
     @Override
     public boolean checkFileExtension() throws IncorrectFileExtension {
-        if(!getFileExtension().equals(RMDL_EXTENSION)){
+        if (!getFileExtension().equals(RMDL_EXTENSION)) {
             throw new IncorrectFileExtension();
         }
         return true;

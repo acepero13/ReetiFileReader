@@ -9,7 +9,7 @@ public class Sequence {
     private Property property;
     private LinkedList<Pose> poses = new LinkedList<>();
 
-    public Sequence(){
+    public Sequence() {
         property = new Property();
     }
 
@@ -26,6 +26,6 @@ public class Sequence {
     }
 
     public void addProperty(String key, String value) {
-        property.add(key,value);
+        property.add(key, value);
     }
 }

@@ -11,7 +11,6 @@ import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 /**
  * Created by alvaro on 4/12/17.
  */

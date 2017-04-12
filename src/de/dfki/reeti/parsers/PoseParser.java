@@ -35,7 +35,7 @@ public class PoseParser implements RMDLParser {
     private final Sequence sequence;
     private StringBuilder xml = new StringBuilder();
 
-    public PoseParser(Sequence sequence){
+    public PoseParser(Sequence sequence) {
         this.sequence = sequence;
     }
 
@@ -52,12 +52,12 @@ public class PoseParser implements RMDLParser {
     }
 
 
-
     private void parseXMLEnty(String line) {
         xml.append(line);
         try {
             processXML();
-        } catch (JDOMException | IOException | InvalidValue ignored) {}
+        } catch (JDOMException | IOException | InvalidValue ignored) {
+        }
     }
 
     private void processXML() throws JDOMException, IOException, InvalidValue {
@@ -94,7 +94,7 @@ public class PoseParser implements RMDLParser {
 
     private HashMap<String, String> getNodeValues(List children) {
         HashMap<String, String> poseValues = new HashMap<>();
-        for(Object child: children){
+        for (Object child : children) {
             Element childNode = (Element) child;
             String key = childNode.getName();
             String value = childNode.getValue();

@@ -6,11 +6,11 @@ import de.dfki.reeti.models.builders.formatters.base.DoubleFormatter;
  * Created by alvaro on 4/11/17.
  */
 public class StartTimeFormatter extends DoubleFormatter {
-    public StartTimeFormatter(double defaultValue){
+    public StartTimeFormatter(double defaultValue) {
         super(defaultValue);
     }
 
-    public StartTimeFormatter(){
+    public StartTimeFormatter() {
         super();
     }
 

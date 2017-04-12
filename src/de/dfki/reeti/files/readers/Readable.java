@@ -6,7 +6,10 @@ package de.dfki.reeti.files.readers;
  */
 interface Readable {
     boolean open(String filname);
+
     boolean open();
+
     void read();
+
     void parse(String line);
 }

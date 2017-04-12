@@ -38,7 +38,7 @@ public class MotorFormatter extends ArrayFormatter {
     }
 
     protected void shouldParseMotorMovement() throws InvalidValue {
-        if(values.length > 16 || values.length <= 14){
+        if (values.length > 16 || values.length <= 14) {
             throw new InvalidValue();
         }
     }
@@ -46,7 +46,7 @@ public class MotorFormatter extends ArrayFormatter {
     private Movement shouldBuildMovement() throws InvalidValue {
         try {
             return buildMovement();
-        }catch (ArrayIndexOutOfBoundsException exception){
+        } catch (ArrayIndexOutOfBoundsException exception) {
             throw new InvalidValue();
         }
     }

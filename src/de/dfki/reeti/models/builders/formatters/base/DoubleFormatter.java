@@ -8,8 +8,9 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
  */
 public abstract class DoubleFormatter implements Formatter {
     private final Double defaultValue;
-    private Double value = null;
     protected Pose pose;
+    private Double value = null;
+
     public DoubleFormatter(double defaultValue) {
         this.defaultValue = defaultValue;
     }
@@ -17,22 +18,30 @@ public abstract class DoubleFormatter implements Formatter {
     public DoubleFormatter() {
         defaultValue = null;
     }
+
+    public static Double parseDouble(String stringValue) throws InvalidValue {
+        try {
+            return Double.parseDouble(stringValue);
+        } catch (NumberFormatException exeption) {
+            throw new InvalidValue();
+        }
+    }
+
     @Override
     public void build(String stringValue, Pose pose) throws InvalidValue {
         this.pose = pose;
         try {
             value = parseDouble(stringValue);
-        }catch (InvalidValue exception){
+        } catch (InvalidValue exception) {
             applyDefaultValue();
         }
         buildObject();
     }
 
-
     private void applyDefaultValue() throws InvalidValue {
-        if(defaultValue != null){
+        if (defaultValue != null) {
             value = defaultValue;
-        }else{
+        } else {
             throw new InvalidValue();
         }
     }
@@ -40,18 +49,8 @@ public abstract class DoubleFormatter implements Formatter {
     public abstract void buildObject();
 
     @Override
-    public Double getValue(){
+    public Double getValue() {
         return value;
-    }
-
-
-
-    public static Double parseDouble(String stringValue) throws InvalidValue {
-        try {
-            return Double.parseDouble(stringValue);
-        }catch (NumberFormatException exeption){
-            throw new InvalidValue();
-        }
     }
 
 
