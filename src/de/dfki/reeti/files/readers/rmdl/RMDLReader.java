@@ -18,26 +18,13 @@ public class RMDLReader extends FileReader {
     private RettiBuilderHandler poseHandler;
     private Sequence sequence;
 
-    public RMDLReader() {
-        initHandlers();
-    }
-
-    public RMDLReader(String fileName) {
-        this.filename = fileName;
-        initHandlers();
-
-    }
-
-    public RMDLReader(String fileName, FileSystemAble fs) {
-        fileSystem = fs;
-        filename = fileName;
-        initHandlers();
-    }
-
     public RMDLReader(FileSystemAble fs) {
         fileSystem = fs;
+        filename = fs.getFileName();
         initHandlers();
     }
+
+
 
     private void initHandlers() {
         sequence = new Sequence();

@@ -20,7 +20,7 @@ public class ReaderIntegrationTest {
     public void test_readResFile_GoodFile_FileParsed() {
         File file = new File("tests/res/files/goodBye.rmdl");
         FileSystemAble fileSystem = new RMDLFileSystem(file.getAbsolutePath());
-        reader = new RMDLReader(file.getAbsolutePath(), fileSystem);
+        reader = new RMDLReader(fileSystem);
         reader.open();
         reader.read();
         Sequence sequence = ((RMDLReader)reader).getSequence();

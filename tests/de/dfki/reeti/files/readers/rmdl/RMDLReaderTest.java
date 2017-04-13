@@ -100,7 +100,7 @@ public class RMDLReaderTest {
         if(fileName.equals("")){
             reader = new RMDLReader(fs);
         }else {
-            reader = new RMDLReader(fileName, fs);
+            reader = new RMDLReader(fs);
         }
     }
 
@@ -127,6 +127,10 @@ public class RMDLReaderTest {
 
         public BufferedReader getBufferedReader() throws FileNotFoundException{
             return bufferReader;
+        }
+
+        public void close(){
+
         }
 
 

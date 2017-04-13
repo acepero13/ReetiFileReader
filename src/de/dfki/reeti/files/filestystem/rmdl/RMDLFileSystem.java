@@ -69,4 +69,9 @@ public class RMDLFileSystem implements FileSystemAble {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public String getFileName() {
+        return this.filename;
+    }
 }

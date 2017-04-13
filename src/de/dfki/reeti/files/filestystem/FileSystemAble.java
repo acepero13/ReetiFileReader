@@ -23,4 +23,5 @@ public interface FileSystemAble {
     void close();
 
 
+    String getFileName();
 }

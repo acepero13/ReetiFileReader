@@ -17,12 +17,6 @@ public abstract class FileReader implements Readable {
     private BufferedReader bufferedReader = null;
 
     @Override
-    public boolean open(String filname) {
-        this.filename = filname;
-        return open();
-    }
-
-    @Override
     public boolean open() {
         try {
             bufferedReader = fileSystem.openFile();
@@ -37,6 +31,7 @@ public abstract class FileReader implements Readable {
     public void read() {
         try {
             readLineByLine();
+            fileSystem.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
