@@ -27,12 +27,26 @@ public class Sequence implements XMLWritable {
         poses.add(pose);
     }
 
+
     public void addProperty(String key, String value) {
         property.add(key, value);
     }
 
+    public void addProperty(Property property){
+        this.property = property;
+    }
+
     @Override
     public String write() {
-        return null;
+        StringBuilder xml = new StringBuilder();
+        xml.append("<reeti>\n")
+                .append(property.write()+"\n")
+                .append("<sequence>\n");
+        for (Pose pose:poses ) {
+            xml.append(pose.write());
+        }
+        xml.append("\n</sequence>\n");
+        xml.append("</reeti>");
+        return xml.toString();
     }
 }

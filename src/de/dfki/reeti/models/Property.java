@@ -148,6 +148,20 @@ public class Property implements XMLWritable{
 
     @Override
     public String write() {
-        return null;
+        StringBuilder xml = new StringBuilder();
+        xml.append("<properties>\n")
+                .append("<property name=\"name\">" + name + "</property>\n")
+                .append("<property name=\"duration\">" + duration + "</property>\n")
+                .append("<property name=\"soundUsed\">" + soundUsed + "</property>\n")
+                .append("<property name=\"imageUsed\">" + imageUsed + "</property>\n")
+                .append("<property name=\"functionUsed\">" + functionUsed + "</property>\n")
+                .append("<property name=\"earsUsed\">" + earsUsed + "</property>\n")
+                .append("<property name=\"eyesUsed\">" + eyesUsed + "</property>\n")
+                .append("<property name=\"mouthUsed\">" + mouthUsed + "</property>\n")
+                .append("<property name=\"neckUsed\">" + neckUsed + "</property>\n")
+                .append("<property name=\"colorUsed\">" + colorUsed + "</property>\n")
+                .append("</properties>")
+        ;
+        return xml.toString();
     }
 }

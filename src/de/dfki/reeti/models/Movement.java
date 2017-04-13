@@ -153,6 +153,25 @@ public class Movement implements XMLWritable {
 
     @Override
     public String write() {
-        return null;
+        StringBuilder xml = new StringBuilder();
+        xml.append("<motors>\n")
+                .append("<motor name=\"neckRotat\">" + neckRotat + "</motor>\n")
+                .append("<motor name=\"neckTilt\">" + neckTilt + "</motor>\n")
+                .append("<motor name=\"neckPan\">" + neckPan + "</motor>\n")
+                .append("<motor name=\"leftLC\">" + leftLC + "</motor>\n")
+                .append("<motor name=\"rightLC\">" + rightLC + "</motor>\n")
+                .append("<motor name=\"topLip\">" + topLip + "</motor>\n")
+                .append("<motor name=\"bottomLip\">" + bottomLip+ "</motor>\n")
+                .append("<motor name=\"leftEar\">" + leftEar + "</motor>\n")
+                .append("<motor name=\"rightEar\">" + rightEar + "</motor>\n")
+                .append("<motor name=\"leftEyeTilt\">" + leftEyeTilt+ "</motor>\n")
+                .append("<motor name=\"rightEyeTilt\">" + rightEyeTilt + "</motor>\n")
+                .append("<motor name=\"leftEyePan\">" + leftEyePan + "</motor>\n")
+                .append("<motor name=\"rightEyePan\">" + rightEyePan + "</motor>\n")
+                .append("<motor name=\"leftEyeLid\">" + leftEyeLid + "</motor>\n")
+                .append("<motor name=\"rightEyeLid\">" + rightEyeLid + "</motor>\n")
+                .append("<motor name=\"color\">" + color + "</motor>\n")
+                .append("</motors>");
+        return xml.toString();
     }
 }

@@ -67,6 +67,15 @@ public class Pose implements XMLWritable {
 
     @Override
     public String write() {
-        return null;
+        StringBuilder xml = new StringBuilder();
+        xml.append("<pose name=\"" + name + "\">\n")
+                .append("<transition>" + transiton + "</transition>\n")
+                .append("<backToNeutral>" + backToNeutral + "</backToNeutral>\n")
+                .append("<startTime>" + startTime + "</startTime>\n") ;
+       xml.append(duration.write() + "\n");
+       xml.append(motorsMovement.write() + "\n");
+       xml.append("</pose>");
+       return xml.toString();
+
     }
 }

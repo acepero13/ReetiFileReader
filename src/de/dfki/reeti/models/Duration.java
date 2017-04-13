@@ -6,9 +6,9 @@ import de.dfki.reeti.files.filestystem.XMLWritable;
  * Created by alvaro on 4/11/17.
  */
 public class Duration implements XMLWritable {
-    private double timeToReachPose;
-    private double timeToMaintainPose;
-    private Double timeToNeutralPose;
+    private double timeToReachPose = -1;
+    private double timeToMaintainPose = -1;
+    private double timeToNeutralPose = -1;
 
     public double getTimeToReachPose() {
         return timeToReachPose;
@@ -36,6 +36,12 @@ public class Duration implements XMLWritable {
 
     @Override
     public String write() {
-        return null;
+        StringBuilder xml = new StringBuilder();
+        xml.append("<duration>\n")
+                .append("<timeToReachPose>").append(String.valueOf(timeToReachPose)).append("</timeToReachPose>\n")
+                .append("<timeToMaintainPose>" + String.valueOf(timeToMaintainPose) + "</timeToMaintainPose>\n")
+                .append("<timeToNeutralPose>" + String.valueOf(timeToNeutralPose) + "</timeToNeutralPose>\n")
+                .append("</duration>");
+        return xml.toString();
     }
 }
