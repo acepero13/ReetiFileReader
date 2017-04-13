@@ -4,6 +4,7 @@ import de.dfki.reeti.builders.PoseHandler;
 import de.dfki.reeti.builders.PropertyHandler;
 import de.dfki.reeti.builders.RettiBuilderHandler;
 import de.dfki.reeti.files.filestystem.FileSystemAble;
+import de.dfki.reeti.files.filestystem.XMLWritable;
 import de.dfki.reeti.files.readers.FileReader;
 import de.dfki.reeti.models.Sequence;
 
@@ -12,7 +13,7 @@ import java.util.HashMap;
 /**
  * Created by alvaro on 3/6/17.
  */
-public class RMDLReader extends FileReader {
+public class RMDLReader extends FileReader implements XMLWritable {
 
     private RettiBuilderHandler firstHandlerPropertyHandler;
     private RettiBuilderHandler poseHandler;
@@ -23,8 +24,6 @@ public class RMDLReader extends FileReader {
         filename = fs.getFileName();
         initHandlers();
     }
-
-
 
     private void initHandlers() {
         sequence = new Sequence();
@@ -38,15 +37,20 @@ public class RMDLReader extends FileReader {
         firstHandlerPropertyHandler.append(line);
     }
 
-    public HashMap<String, String> getPropertyValues() {
+    HashMap<String, String> getPropertyValues() {
         return firstHandlerPropertyHandler.getValues();
     }
 
-    public HashMap<String, String> getPoseValues() {
+    HashMap<String, String> getPoseValues() {
         return poseHandler.getValues();
     }
 
     public Sequence getSequence() {
         return sequence;
+    }
+
+    @Override
+    public String write() {
+        return null;
     }
 }

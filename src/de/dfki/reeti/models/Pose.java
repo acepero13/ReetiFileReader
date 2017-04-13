@@ -1,9 +1,11 @@
 package de.dfki.reeti.models;
 
+import de.dfki.reeti.files.filestystem.XMLWritable;
+
 /**
  * Created by alvaro on 4/10/17.
  */
-public class Pose {
+public class Pose implements XMLWritable {
     private String name;
     private Double startTime;
     private Duration duration;
@@ -61,5 +63,10 @@ public class Pose {
 
     public void setTransiton(String transiton) {
         this.transiton = transiton;
+    }
+
+    @Override
+    public String write() {
+        return null;
     }
 }

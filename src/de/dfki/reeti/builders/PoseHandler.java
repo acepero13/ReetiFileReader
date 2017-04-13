@@ -1,7 +1,5 @@
 package de.dfki.reeti.builders;
 
-import de.dfki.reeti.models.Pose;
-import de.dfki.reeti.models.Property;
 import de.dfki.reeti.models.Sequence;
 import de.dfki.reeti.parsers.PoseParser;
 
@@ -11,8 +9,6 @@ import de.dfki.reeti.parsers.PoseParser;
  * Pose Handel
  */
 public class PoseHandler extends RettiBuilderHandler {
-    private Pose pose;
-    private Property property;
 
     public PoseHandler(Sequence sequence) {
         super(sequence);

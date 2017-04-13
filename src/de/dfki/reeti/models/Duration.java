@@ -1,9 +1,11 @@
 package de.dfki.reeti.models;
 
+import de.dfki.reeti.files.filestystem.XMLWritable;
+
 /**
  * Created by alvaro on 4/11/17.
  */
-public class Duration {
+public class Duration implements XMLWritable {
     private double timeToReachPose;
     private double timeToMaintainPose;
     private Double timeToNeutralPose;
@@ -30,5 +32,10 @@ public class Duration {
 
     public void setTimeToNeutralPose(Double timeToNeutralPose) {
         this.timeToNeutralPose = timeToNeutralPose;
+    }
+
+    @Override
+    public String write() {
+        return null;
     }
 }

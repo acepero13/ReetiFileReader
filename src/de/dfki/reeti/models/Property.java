@@ -1,5 +1,6 @@
 package de.dfki.reeti.models;
 
+import de.dfki.reeti.files.filestystem.XMLWritable;
 import de.dfki.reeti.models.builders.formatters.base.BooleanFormatter;
 import de.dfki.reeti.models.builders.formatters.base.DoubleFormatter;
 import de.dfki.reeti.models.exceptions.InvalidValue;
@@ -7,7 +8,7 @@ import de.dfki.reeti.models.exceptions.InvalidValue;
 /**
  * Created by alvaro on 3/9/17.
  */
-public class Property {
+public class Property implements XMLWritable{
     private String name = "";
     private double duration;
     private boolean soundUsed = false;
@@ -18,6 +19,7 @@ public class Property {
     private boolean mouthUsed = false;
     private boolean neckUsed = false;
     private boolean colorUsed = false;
+    private XMLWritable writer;
 
 
     public boolean isEyesUsed() {
@@ -142,5 +144,10 @@ public class Property {
         } catch (InvalidValue invalidValue) {
             invalidValue.printStackTrace();
         }
+    }
+
+    @Override
+    public String write() {
+        return null;
     }
 }

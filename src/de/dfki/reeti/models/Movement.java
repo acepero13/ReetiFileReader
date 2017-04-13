@@ -1,9 +1,11 @@
 package de.dfki.reeti.models;
 
+import de.dfki.reeti.files.filestystem.XMLWritable;
+
 /**
  * Created by alvaro on 4/10/17.
  */
-public class Movement {
+public class Movement implements XMLWritable {
     private double neckRotat = -1;
     private double neckTilt = -1;
     private double neckPan = -1;
@@ -147,5 +149,10 @@ public class Movement {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String write() {
+        return null;
     }
 }
